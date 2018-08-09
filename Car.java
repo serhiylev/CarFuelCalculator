@@ -10,14 +10,14 @@ public class Car {
         spentFuel = fuelDissipation * km;
         if (spentFuel < amountOfFuelInTheTank) {
             carMileage += km;
-            System.out.println(color + " " + brend + " проїхав" + km + "км  загальний пробіг " + carMileage);
+            System.out.println(color + " " + brend + " проїхав" + String.format("%.2f", km) + "км  загальний пробіг " + String.format("%.2f", carMileage));
             amountOfFuelInTheTank = amountOfFuelInTheTank - spentFuel;
         } else if (amountOfFuelInTheTank == 0) {
             System.out.println("Пального немає, заправте машину");
         } else {
             km = amountOfFuelInTheTank / fuelDissipation;
             carMileage += km;
-            System.out.println(color + " " + brend + " проїхав " + km + "км  загальний пробіг " + carMileage);
+            System.out.println(color + " " + brend + " проїхав " + String.format("%.2f", km) + "км  загальний пробіг " + String.format("%.2f", carMileage));
             amountOfFuelInTheTank = 0;
         }
     }
@@ -31,7 +31,7 @@ public class Car {
                 "\nмарка - " + brend +
                 "\nрозхід - " + fuelDissipation*100 +
                 "\nоб'єм пального в баці - " + amountOfFuelInTheTank +
-                "\nпробіг - " + carMileage);
+                "\nпробіг - " + String.format("%.2f", carMileage));
     }
 
     Car(String color, String brend, int fuelDissipation, int amountOfFuelInTheTank, int carMileage) {
