@@ -34,24 +34,13 @@ public class Car {
         amountOfFuelInTheTank += fuelVolume;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "color='" + color + '\'' +
-                ", brand='" + brand + '\'' +
-                ", fuelDissipation=" + fuelDissipation +
-                ", amountOfFuelInTheTank=" + amountOfFuelInTheTank +
-                ", carMileage=" + carMileage +
-                ", spentFuel=" + spentFuel +
-                '}';
+    void distance() {
+        System.out.println(toString());
     }
 
-    void distance() {
-        System.out.println("колір - " + color +
-                "\nмарка - " + brand +
-                "\nрозхід - " + fuelDissipation * 100 +
-                "\nоб'єм пального в баці - " + amountOfFuelInTheTank +
-                "\nпробіг - " + String.format("%.2f", carMileage));
+    @Override
+    public String toString() {
+        return "колір - " + color +  "\nмарка - " + brand + "\nрозхід - " + fuelDissipation * 100 + "\nоб'єм пального в баці - " + amountOfFuelInTheTank + "\nпробіг - " + String.format("%.2f", carMileage);
     }
 
 
